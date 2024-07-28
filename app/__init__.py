@@ -16,10 +16,13 @@ def create_app():
     def home():
         return jsonify({"message": "Welcome to Community Pulse API!"}), 200
 
-    from .routers.questions import questions
-    from .routers.responses import responses_bp
+    from app.routers.questions import questions_bp
+    from app.routers.responses import responses_bp
 
-    app.register_blueprint(questions)
+    app.register_blueprint(questions_bp)
     app.register_blueprint(responses_bp, url_prefix='/api')
+
+    # Ensure models are imported
+    from app.models import Category, Question, Response
 
     return app

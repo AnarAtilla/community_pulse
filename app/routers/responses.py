@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from app import db
-from app.models.response import Response
+from app.models import Response
 import logging
 import random
 

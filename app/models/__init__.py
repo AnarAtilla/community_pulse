@@ -1,2 +1,1 @@
-from .question import Question
-from .response import Response
+from .models import Category, Question, Response
